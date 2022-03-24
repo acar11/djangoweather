@@ -2,6 +2,26 @@
 
 {% block content %}
 
-<h1>Hello World!</h1>
+<h1>My Weather Test App</h1>
+<br>
+
+{{ api }}
+<br><br><br>
+{% if api %}
+    {% if api == "Error" %}
+        We have a problem...
+    {% else %}
+
+        City: {{ api.name }}<br>
+        Weather: {{api.weather.0.main}} - {{api.weather.1.description}} <br>
+        Temp: {{ api.main.temp}}<br>
+        Feels Like: {{ api.main.feels_like}}<br>
+        Min: {{ api.main.temp_min}}<br> 
+        Max: {{ api.main.temp_max}}<br><br>
+        <b>WIND: {{api.wind.speed}}</b><br>
+        
+    {% endif %}
+
+{% endif %}
 
 {% endblock %}
