@@ -4,6 +4,12 @@
 
 <h1>My Weather Test App</h1>
 <br>
+ {% if zipcode %}
+    {{ zipcode }}
+ {% endif %}
+ <br>
+
+<br>
 
 {{ api }}
 <br><br><br>
@@ -19,7 +25,7 @@
         Min: {{ api.main.temp_min}}<br> 
         Max: {{ api.main.temp_max}}<br><br>
         <b>WIND: {{api.wind.speed}}</b><br>
-        
+
     {% endif %}
 
 {% endif %}

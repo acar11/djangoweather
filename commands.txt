@@ -1,0 +1,69 @@
+
+
+# Isntall and set Virtual Enrironmet:
+~pip install virtualenv
+
+~pip freeze # to check
+
+# Isntall our Virtual Environme
+~python -m venv venv # last part is the name of our virtual environment, choose a short name
+
+# Turn on the Virtual Environment
+~source venv/bin/activate
+
+# Isntall Django in Virtual Environment
+~pip install django # if wnat a different version do django==2.2.3
+
+#Create a new project in Django - if error just ype django without the .py
+~django-admin.py startproject nameoftheproject
+
+# To run the server insuede the Virtual Environment
+~python manage.py runserver
+
+# Addin  project to GIT version control
+$ git config --global user.name "Your Name"
+$ git config --global user.email "you@youraddress.com"
+$ git config --global push.default matching
+$ git config --global alias.co checkout
+$ git init
+
+# ADD changes to GIT - The . (period) means saves everything to GIT from the directory your are in.
+~git add . 
+
+# Now to commit the changes to GIT.
+~git commit -am 'your comments here'
+
+# Prepare to push changes to GITHUB
+# If we dont have a directory to create our SSH Key, we need to create one.
+# ~/. means in the default directory - The dot . in front of a directory, means it is hidden.
+
+~mkdir ~/.ssh
+
+# Move into the SSH dir
+~cd ~/.ssh
+
+# Generate the SSH Key in there. If in windows, you might need the .exe at the end otherwise:
+#OLD doenst work with GITHUB ~ssh-keygen
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+$ cat ~/.ssh/id_ed25519.pub
+# Then select and copy the contents of the id_ed25519.pub file
+# displayed in the terminal to your clipboard
+#Grab and copy the content of the id_rsa.pub. it will go into GETHUB
+~cat id_rsa.pub
+
+# Go to GETHUB, settings, SSH and GPG Keys and click on New SSK Key and past the content  of the
+# id_rsa.pub file in  there.
+# ONce that its done, click on Repositories to create one for this project
+
+# To push changes to GIT
+…or push an existing repository from the command line , copy those commands for that
+
+
+#From now on any changes to commit to GIT as:
+~git add .
+~git commit -am "comments here"
+
+# To push to GITHUB:
+~git push
+
+
